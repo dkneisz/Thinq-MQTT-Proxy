@@ -888,7 +888,7 @@ def getParsedValue(value, param, modelInfo) {
 		case "reference":
 			def refField = param.option[0]
 			if (refField)
-				return modelInfo."${refField}"."${value}"?._comment ?: value
+				return modelInfo."${refField}"."${value}"?.courseValue ?: modelInfo."${refField}"."${value}"?._comment ?: value
 			return value
 		default:
 			return value
@@ -1202,7 +1202,7 @@ def getParsedMqttValue(value, param, modelInfo, dev) {
 	case "ref":
 		def refField = param.ref
 			if (refField)
-		return modelInfo."${refField}"."${value}"?._comment ?: value
+		return modelInfo."${refField}"."${value}"?.courseValue ?: modelInfo."${refField}"."${value}"?._comment ?: value
 		default:
 			return value
 	}
